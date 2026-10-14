@@ -1,0 +1,13 @@
+{
+  "scope": "A",
+  "description": "The official MySQL JDBC Driver, Connector/J.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "uuid": "ea846f2f-e5ba-4185-9215-ca27df5b5db4"
+  }
+}
