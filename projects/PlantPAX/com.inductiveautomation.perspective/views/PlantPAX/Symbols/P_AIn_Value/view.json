@@ -1,0 +1,586 @@
+{
+  "custom": {
+    "Label": 0,
+    "EU": 0,
+    "Dec": 0,
+    "PV": 0,
+    "SrcQ": 0,
+    "Notify": 0,
+    "Fault": 0,
+    "Err": 0,
+    "Maint": 0,
+    "Inh": 0,
+    "Subst": 0,
+    "Sev": 0,
+    "Unack": 0,
+    "SevColor": 0,
+    "Blink": 0
+  },
+  "params": {
+    "tagPath": ""
+  },
+  "propConfig": {
+    "custom.Label": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_Label",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.EU": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_EU",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Dec": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_PVDecPlcs",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.PV": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.SrcQ": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/SrcQ",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Notify": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val_NotifyAll",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Fault": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val_Fault",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Err": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_Err",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Maint": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_MaintByp",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Inh": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_AlmInh",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Subst": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_SubstPV",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Sev": {
+      "binding": {
+        "config": {
+          "expression": "floor({view.custom.Notify}/2)%8"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Unack": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Notify}%2"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.SevColor": {
+      "binding": {
+        "config": {
+          "expression": "switch({view.custom.Sev},1,\"#00B0F0\",2,\"#FFD400\",3,\"#FF7F00\",4,\"#E00000\",\"#404040\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Blink": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Unack}=1, floor(toMillis(now(500))/500)%2, 0)"
+        },
+        "type": "expr"
+      }
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 150,
+      "height": 72
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "version": 0,
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "transparent",
+        "overflow": "hidden"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "Tag"
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 20
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "paddingLeft": "3px",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Label}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.border": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Sev}>0,\"3px solid \",\"1px solid \")+if({view.custom.Sev}>0,{view.custom.SevColor},\"#404040\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Blink}=1,{view.custom.SevColor},\"#FFFFFF\")"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "IconErr"
+        },
+        "position": {
+          "x": 98,
+          "y": 0,
+          "width": 13,
+          "height": 20
+        },
+        "props": {
+          "text": "E",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#FF66FF",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Err}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "IconMaint"
+        },
+        "position": {
+          "x": 111,
+          "y": 0,
+          "width": 13,
+          "height": 20
+        },
+        "props": {
+          "text": "M",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#FFA500",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Maint}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "IconInh"
+        },
+        "position": {
+          "x": 124,
+          "y": 0,
+          "width": 13,
+          "height": 20
+        },
+        "props": {
+          "text": "I",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#B0B0B0",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Inh}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "IconSubst"
+        },
+        "position": {
+          "x": 137,
+          "y": 0,
+          "width": 13,
+          "height": 20
+        },
+        "props": {
+          "text": "S",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#80C0FF",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Subst}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "PV"
+        },
+        "position": {
+          "x": 0,
+          "y": 20,
+          "width": 100,
+          "height": 34
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "22px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "paddingRight": "5px",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "right"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.SrcQ}>=32,\"?????\",numberFormat({view.custom.PV},substring(\"0.0000000\",0,if({view.custom.Dec}=0,1,2+{view.custom.Dec}))))"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.SrcQ}>=32,\"#E040E0\",if(({view.custom.SrcQ}>=16 && {view.custom.SrcQ}<32 && {view.custom.SrcQ}!=18),\"#FFF3B0\",\"#FFFFFF\"))"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "EU"
+        },
+        "position": {
+          "x": 100,
+          "y": 20,
+          "width": 50,
+          "height": 34
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "backgroundColor": "#FFFFFF",
+            "border": "1px solid #404040",
+            "borderLeft": "none",
+            "paddingLeft": "4px",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.EU}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "Alarm"
+        },
+        "position": {
+          "x": 0,
+          "y": 54,
+          "width": 150,
+          "height": 16
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "11px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "switch({view.custom.Fault},20,\"LOW\",21,\"HIGH\",24,\"LOW LOW\",25,\"HIGH HIGH\",32,\"FAIL\",34,\"CONFIG ERROR\",\"\")"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "len(switch({view.custom.Fault},20,\"LOW\",21,\"HIGH\",24,\"LOW LOW\",25,\"HIGH HIGH\",32,\"FAIL\",34,\"CONFIG ERROR\",\"\"))>0"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Sev}>0,{view.custom.SevColor},\"#FFF3B0\")"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\ttp = self.view.params.tagPath\n\tsystem.perspective.openPopup('AIn_' + tp, 'PlantPAX/Faceplates/P_AIn_Faceplate', params={'tagPath': tp},\n\t    title='P_AIn  ' + tp.split('/')[-1], position={'width': 660, 'height': 520}, showCloseIcon=True, draggable=True, resizable=False, modal=False, viewPortBound=True)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    }
+  }
+}

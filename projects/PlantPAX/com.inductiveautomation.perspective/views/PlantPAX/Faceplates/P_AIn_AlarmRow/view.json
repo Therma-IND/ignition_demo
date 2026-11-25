@@ -1,0 +1,759 @@
+{
+  "custom": {
+    "Alm": 0,
+    "Ack": 0,
+    "Shelved": 0,
+    "Suppr": 0,
+    "Disabled": 0,
+    "Exists": 0,
+    "Notify": 0,
+    "RdyAck": 0,
+    "RdyReset": 0,
+    "RdyShelve": 0,
+    "RdyUnshelve": 0,
+    "RdyTest": 0,
+    "RdyEnable": 0,
+    "RdyDisable": 0,
+    "Cond": 0,
+    "Sev": 0,
+    "Unack": 0,
+    "SevColor": 0,
+    "Blink": 0,
+    "On": 0
+  },
+  "params": {
+    "tagPath": "",
+    "name": "",
+    "text": ""
+  },
+  "propConfig": {
+    "custom.Alm": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Ack": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Ack",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Shelved": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Shelved",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Suppr": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Suppressed",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Disabled": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Disabled",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Exists": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg_Exists",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Notify": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val_Notify",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyAck": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/ORdy_Ack",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyReset": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/ORdy_Reset",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyShelve": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/ORdy_Shelve",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyUnshelve": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/ORdy_Unshelve",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyTest": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/MRdy_Test",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyEnable": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/MRdy_Enable",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.RdyDisable": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/MRdy_Disable",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Cond": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg_Cond",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Sev": {
+      "binding": {
+        "config": {
+          "expression": "floor({view.custom.Notify}/2)%8"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Unack": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Notify}%2"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.SevColor": {
+      "binding": {
+        "config": {
+          "expression": "switch({view.custom.Sev},1,\"#00B0F0\",2,\"#FFD400\",3,\"#FF7F00\",4,\"#E00000\",\"#404040\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Blink": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Unack}=1, floor(toMillis(now(500))/500)%2, 0)"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.On": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Alm} && {view.custom.Exists}"
+        },
+        "type": "expr"
+      }
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 560,
+      "height": 32
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "version": 0,
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "transparent",
+        "overflow": "hidden"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_AlarmPolygon"
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "width": 560,
+          "height": 32
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "borderStyle": "solid",
+            "borderWidth": "2px",
+            "boxSizing": "border-box",
+            "backgroundColor": "transparent"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.On}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.borderColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Unack}=1 && {view.custom.Blink}=1,\"#FFFFFF\",{view.custom.SevColor})"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_SeverityIndicators"
+        },
+        "position": {
+          "x": 4,
+          "y": 3,
+          "width": 26,
+          "height": 26
+        },
+        "props": {
+          "text": "!",
+          "style": {
+            "fontSize": "14px",
+            "color": "#000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.On}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Unack}=1 && {view.custom.Blink}=1,\"#FFFFFF\",{view.custom.SevColor})"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "ImageAlarmBadCfg"
+        },
+        "position": {
+          "x": 4,
+          "y": 3,
+          "width": 26,
+          "height": 26
+        },
+        "props": {
+          "text": "?",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "backgroundColor": "#B0B0B0",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box",
+            "fontWeight": "bold"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "!{view.custom.Exists}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_AlarmText"
+        },
+        "position": {
+          "x": 34,
+          "y": 3,
+          "width": 200,
+          "height": 26
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "11px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "normal"
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if(!{view.custom.Exists},{view.params.name}+\" - not configured\",{view.params.name}+\": \"+if(len({view.custom.Cond})>0,{view.custom.Cond},{view.params.text}))"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_DisabledIcon"
+        },
+        "position": {
+          "x": 238,
+          "y": 4,
+          "width": 18,
+          "height": 22
+        },
+        "props": {
+          "text": "D",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#B0B0B0",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Disabled}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_ShelvedIcon"
+        },
+        "position": {
+          "x": 258,
+          "y": 4,
+          "width": 18,
+          "height": 22
+        },
+        "props": {
+          "text": "S",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#80C0FF",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Shelved}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AD_SuppressedIcon"
+        },
+        "position": {
+          "x": 278,
+          "y": 4,
+          "width": 18,
+          "height": 22
+        },
+        "props": {
+          "text": "U",
+          "style": {
+            "fontSize": "10px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#C8A8FF",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Suppr}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.input.button",
+        "version": 0,
+        "meta": {
+          "name": "Ack"
+        },
+        "position": {
+          "x": 302,
+          "y": 3,
+          "width": 50,
+          "height": 26
+        },
+        "props": {
+          "text": "Ack",
+          "style": {
+            "fontSize": "12px"
+          }
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.RdyAck}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tsystem.tag.writeBlocking([self.view.params.tagPath + '/OCmd_Ack'],[True])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.input.button",
+        "version": 0,
+        "meta": {
+          "name": "Reset"
+        },
+        "position": {
+          "x": 356,
+          "y": 3,
+          "width": 50,
+          "height": 26
+        },
+        "props": {
+          "text": "Reset",
+          "style": {
+            "fontSize": "12px"
+          }
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.RdyReset}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tsystem.tag.writeBlocking([self.view.params.tagPath + '/OCmd_Reset'],[True])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.input.button",
+        "version": 0,
+        "meta": {
+          "name": "Shelve"
+        },
+        "position": {
+          "x": 410,
+          "y": 3,
+          "width": 72,
+          "height": 26
+        },
+        "props": {
+          "text": "Shelve",
+          "style": {
+            "fontSize": "12px"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Shelved},\"Unshelve\",\"Shelve\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.RdyShelve} || {view.custom.RdyUnshelve}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tp = self.view.params.tagPath\n\tcmd = 'OCmd_Unshelve' if self.view.custom.Shelved else 'OCmd_Shelve'\n\tsystem.tag.writeBlocking([p + '/' + cmd], [True])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.input.button",
+        "version": 0,
+        "meta": {
+          "name": "EnDis"
+        },
+        "position": {
+          "x": 486,
+          "y": 3,
+          "width": 72,
+          "height": 26
+        },
+        "props": {
+          "text": "Disable",
+          "style": {
+            "fontSize": "12px"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Disabled},\"Enable\",\"Disable\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.RdyEnable} || {view.custom.RdyDisable}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tp = self.view.params.tagPath\n\tcmd = 'MCmd_Enable' if self.view.custom.Disabled else 'MCmd_Disable'\n\tsystem.tag.writeBlocking([p + '/' + cmd], [True])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

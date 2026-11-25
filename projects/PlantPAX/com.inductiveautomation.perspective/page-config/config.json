@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "/": {
+      "title": "PlantPAX - Analog Inputs",
+      "viewPath": "PlantPAX/Overview/AIn_Overview"
+    },
+    "/ggfx": {
+      "title": "PlantPAX - Global Objects",
+      "viewPath": "PlantPAX/Overview/AIn_Overview_ggfx"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom"
+  }
+}

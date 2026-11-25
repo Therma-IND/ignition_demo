@@ -1,0 +1,240 @@
+{
+  "custom": {
+    "Alm": 0,
+    "Exists": 0,
+    "Notify": 0,
+    "Cond": 0,
+    "Sev": 0,
+    "Unack": 0,
+    "SevColor": 0,
+    "Blink": 0,
+    "On": 0
+  },
+  "params": {
+    "tagPath": "",
+    "text": ""
+  },
+  "propConfig": {
+    "custom.Alm": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Exists": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg_Exists",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Notify": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val_Notify",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Cond": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg_Cond",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Sev": {
+      "binding": {
+        "config": {
+          "expression": "floor({view.custom.Notify}/2)%8"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Unack": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Notify}%2"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.SevColor": {
+      "binding": {
+        "config": {
+          "expression": "switch({view.custom.Sev},1,\"#00B0F0\",2,\"#FFD400\",3,\"#FF7F00\",4,\"#E00000\",\"#404040\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Blink": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Unack}=1, floor(toMillis(now(500))/500)%2, 0)"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.On": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Alm} && {view.custom.Exists}"
+        },
+        "type": "expr"
+      }
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.text": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 262,
+      "height": 26
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "version": 0,
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "transparent",
+        "overflow": "hidden"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "msi_AlarmSeverityIndicator"
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "width": 26,
+          "height": 26
+        },
+        "props": {
+          "text": "!",
+          "style": {
+            "fontSize": "14px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.On}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Unack}=1 && {view.custom.Blink}=1,\"#FFFFFF\",{view.custom.SevColor})"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AN_AlarmText"
+        },
+        "position": {
+          "x": 28,
+          "y": 0,
+          "width": 232,
+          "height": 26
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "border": "1px solid #404040",
+            "paddingLeft": "6px",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if(len({view.custom.Cond})>0,{view.custom.Cond},{view.params.text})"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.On}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.Unack}=1 && {view.custom.Blink}=1,\"#FFFFFF\",{view.custom.SevColor})"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

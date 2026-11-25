@@ -1,0 +1,266 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 440
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "height": 34,
+          "width": 760,
+          "x": 20,
+          "y": 10
+        },
+        "props": {
+          "style": {
+            "color": "#000000",
+            "fontSize": "22px",
+            "fontWeight": "bold",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap"
+          },
+          "text": "P_AIn symbols rebuilt from the .ggfx library",
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "t1"
+        },
+        "position": {
+          "height": 18,
+          "width": 300,
+          "x": 20,
+          "y": 56
+        },
+        "props": {
+          "style": {
+            "color": "#000000",
+            "fontSize": "12px",
+            "fontWeight": "bold",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap"
+          },
+          "text": "GO_P_AIn",
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "t2"
+        },
+        "position": {
+          "height": 18,
+          "width": 300,
+          "x": 20,
+          "y": 150
+        },
+        "props": {
+          "style": {
+            "color": "#000000",
+            "fontSize": "12px",
+            "fontWeight": "bold",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap"
+          },
+          "text": "GO_P_AIn_IndicatorM",
+          "textStyle": {
+            "textAlign": "left"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "GO_LIT_101"
+        },
+        "position": {
+          "height": 52,
+          "width": 150,
+          "x": 30,
+          "y": 80
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/LIT_101"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "IndM_LIT_101"
+        },
+        "position": {
+          "height": 254,
+          "width": 74,
+          "x": 30,
+          "y": 176
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/LIT_101"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn_IndicatorM",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GO_FIT_102"
+        },
+        "position": {
+          "height": 52,
+          "width": 150,
+          "x": 210,
+          "y": 80
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/FIT_102"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "IndM_FIT_102"
+        },
+        "position": {
+          "height": 254,
+          "width": 74,
+          "x": 210,
+          "y": 176
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/FIT_102"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn_IndicatorM",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GO_PIT_103"
+        },
+        "position": {
+          "height": 52,
+          "width": 150,
+          "x": 390,
+          "y": 80
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/PIT_103"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "IndM_PIT_103"
+        },
+        "position": {
+          "height": 254,
+          "width": 74,
+          "x": 390,
+          "y": 176
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/PIT_103"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn_IndicatorM",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "GO_TIT_104"
+        },
+        "position": {
+          "height": 52,
+          "width": 150,
+          "x": 570,
+          "y": 80
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/TIT_104"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "IndM_TIT_104"
+        },
+        "position": {
+          "height": 254,
+          "width": 74,
+          "x": 570,
+          "y": 176
+        },
+        "props": {
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/TIT_104"
+          },
+          "path": "PlantPAX/Symbols/GO_P_AIn_IndicatorM",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "#C8C8C8",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

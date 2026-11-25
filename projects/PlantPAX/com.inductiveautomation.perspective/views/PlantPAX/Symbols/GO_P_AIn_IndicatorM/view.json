@@ -1,0 +1,1047 @@
+{
+  "custom": {
+    "Label": 0,
+    "EU": 0,
+    "Dec": 0,
+    "PV": 0,
+    "SrcQ": 0,
+    "Fault": 0,
+    "Err": 0,
+    "Maint": 0,
+    "Inh": 0,
+    "Subst": 0,
+    "EUMin": 0,
+    "EUMax": 0,
+    "HiHiLim": 0,
+    "HiLim": 0,
+    "LoLim": 0,
+    "LoLoLim": 0,
+    "AHiHi": 0,
+    "AHi": 0,
+    "ALo": 0,
+    "ALoLo": 0,
+    "Sev": 0,
+    "Unack": 0,
+    "SevColor": 0,
+    "Blink": 0,
+    "IndState": 0,
+    "Exc": 0,
+    "Frac": 0,
+    "Flash": 0,
+    "InHiHi": 0,
+    "ShowHiHi": 0,
+    "FillHiHi": 0,
+    "InHi": 0,
+    "ShowHi": 0,
+    "FillHi": 0,
+    "InLo": 0,
+    "ShowLo": 0,
+    "FillLo": 0,
+    "InLoLo": 0,
+    "ShowLoLo": 0,
+    "FillLoLo": 0,
+    "ShowAny": 0,
+    "BdrOuter": 0
+  },
+  "params": {
+    "tagPath": ""
+  },
+  "propConfig": {
+    "custom.Label": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_Label",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.EU": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_EU",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Dec": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_PVDecPlcs",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.PV": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.SrcQ": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/SrcQ",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Fault": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val_Fault",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Err": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_Err",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Maint": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_MaintByp",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Inh": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_AlmInh",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Subst": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Sts/Sts_SubstPV",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.EUMin": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val_PVEUMin",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.EUMax": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Val/Val_PVEUMax",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.HiHiLim": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_HiHiLim",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.HiLim": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_HiLim",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.LoLim": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_LoLim",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.LoLoLim": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Cfg/Cfg_LoLoLim",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.AHiHi": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm/Alm_HiHi",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.AHi": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm/Alm_Hi",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.ALo": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm/Alm_Lo",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.ALoLo": {
+      "binding": {
+        "type": "tag",
+        "config": {
+          "mode": "indirect",
+          "tagPath": "{1}/Alm/Alm_LoLo",
+          "references": {
+            "1": "{view.params.tagPath}"
+          },
+          "fallbackDelay": 2.5
+        }
+      }
+    },
+    "custom.Sev": {
+      "binding": {
+        "config": {
+          "expression": "floor({view.custom.Notify}/2)%8"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Unack": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.Notify}%2"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.SevColor": {
+      "binding": {
+        "config": {
+          "expression": "switch({view.custom.Sev},1,\"#00B0F0\",2,\"#FFD400\",3,\"#FF7F00\",4,\"#E00000\",\"#404040\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Blink": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Unack}=1, floor(toMillis(now(500))/500)%2, 0)"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.IndState": {
+      "binding": {
+        "config": {
+          "expression": "if(({view.custom.Notify}=0 && {view.custom.Inh}),10,{view.custom.Notify})"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Exc": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Fault}>=20,{view.custom.Fault},if(floor({view.custom.SrcQ}/8)%2=1,1,if(floor({view.custom.SrcQ}/16)%2=1,2,0)))"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Frac": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.EUMax}>{view.custom.EUMin},max(0,min(1,({view.custom.PV}-{view.custom.EUMin})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin}))),1)"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.Flash": {
+      "binding": {
+        "config": {
+          "expression": "floor(toMillis(now(1000))/1000)%2"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.InHiHi": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.EUMin}<={view.custom.HiHiLim} && {view.custom.HiHiLim}<={view.custom.EUMax}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.ShowHiHi": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.AHiHi} && {view.custom.InHiHi}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.FillHiHi": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.AHiHi},\"#FFAB73\",\"#B8B8B8\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.InHi": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.EUMin}<={view.custom.HiLim} && {view.custom.HiLim}<={view.custom.EUMax}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.ShowHi": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.AHi} && {view.custom.InHi}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.FillHi": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.AHi},\"#F2C200\",\"#D6D6D6\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.InLo": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.EUMin}<={view.custom.LoLim} && {view.custom.LoLim}<={view.custom.EUMax}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.ShowLo": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ALo} && {view.custom.InLo}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.FillLo": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.ALo},\"#F2C200\",\"#D6D6D6\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.InLoLo": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.EUMin}<={view.custom.LoLoLim} && {view.custom.LoLoLim}<={view.custom.EUMax}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.ShowLoLo": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ALoLo} && {view.custom.InLoLo}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.FillLoLo": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.ALoLo},\"#FFAB73\",\"#B8B8B8\")"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.ShowAny": {
+      "binding": {
+        "config": {
+          "expression": "{view.custom.ShowHiHi} || {view.custom.ShowHi} || {view.custom.ShowLo} || {view.custom.ShowLoLo}"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.BdrOuter": {
+      "binding": {
+        "config": {
+          "expression": "if({view.custom.Flash}=0,if({view.custom.ShowHiHi} || {view.custom.ShowLoLo},\"#FFAB73\",\"#F2C200\"),\"#9A9A9A\")"
+        },
+        "type": "expr"
+      }
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 74,
+      "height": 254
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "version": 0,
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "transparent",
+        "overflow": "hidden"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AlarmBorder"
+        },
+        "position": {
+          "x": 0,
+          "y": 0,
+          "width": 74,
+          "height": 254
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "borderStyle": "solid",
+            "borderWidth": "4px",
+            "boxSizing": "border-box",
+            "backgroundColor": "transparent"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.ShowAny}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.borderColor": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.BdrOuter}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "msi_AlarmIndicator"
+        },
+        "position": {
+          "x": 4,
+          "y": 4,
+          "width": 20,
+          "height": 20
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "13px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.IndState}=0,\"\",if({view.custom.IndState}=10,\"I\",\"!\"))"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.IndState}>0"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.IndState}=10,\"#B0B0B0\",if(({view.custom.Unack}=1 && {view.custom.Blink}=1),\"#FFFFFF\",{view.custom.SevColor}))"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "Image_MaintBypass"
+        },
+        "position": {
+          "x": 26,
+          "y": 4,
+          "width": 20,
+          "height": 20
+        },
+        "props": {
+          "text": "M",
+          "style": {
+            "fontSize": "11px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "backgroundColor": "#FFA500",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.Maint}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "msi_Exceptions"
+        },
+        "position": {
+          "x": 48,
+          "y": 4,
+          "width": 22,
+          "height": 20
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "9px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold",
+            "border": "1px solid #404040",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "switch({view.custom.Exc},1,\"SIM\",2,\"?\",20,\"L\",21,\"H\",24,\"LL\",25,\"HH\",32,\"F\",34,\"CFG\",\"\")"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "len(switch({view.custom.Exc},1,\"SIM\",2,\"?\",20,\"L\",21,\"H\",24,\"LL\",25,\"HH\",32,\"F\",34,\"CFG\",\"\"))>0"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "switch({view.custom.Exc},1,\"#80C0FF\",2,\"#FFF3B0\",32,\"#E040E0\",34,\"#E040E0\",if({view.custom.Sev}>0,{view.custom.SevColor},\"#FFF3B0\"))"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "BarGraphBorder"
+        },
+        "position": {
+          "x": 21,
+          "y": 28,
+          "width": 32,
+          "height": 176
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "backgroundColor": "#FFFFFF",
+            "border": "1px solid #000000",
+            "boxSizing": "border-box"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AnimatedBar_Hi"
+        },
+        "position": {
+          "x": 22,
+          "y": 29,
+          "width": 30,
+          "height": 10
+        },
+        "props": {
+          "text": "",
+          "style": {}
+        },
+        "propConfig": {
+          "position.height": {
+            "binding": {
+              "config": {
+                "expression": "round(({view.custom.EUMax}-{view.custom.HiLim})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.InHi}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.FillHi}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AnimatedBar_HiHi"
+        },
+        "position": {
+          "x": 22,
+          "y": 29,
+          "width": 30,
+          "height": 10
+        },
+        "props": {
+          "text": "",
+          "style": {}
+        },
+        "propConfig": {
+          "position.height": {
+            "binding": {
+              "config": {
+                "expression": "round(({view.custom.EUMax}-{view.custom.HiHiLim})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.InHiHi}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.FillHiHi}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AnimatedBar_Lo"
+        },
+        "position": {
+          "x": 22,
+          "y": 193,
+          "width": 30,
+          "height": 10
+        },
+        "props": {
+          "text": "",
+          "style": {}
+        },
+        "propConfig": {
+          "position.height": {
+            "binding": {
+              "config": {
+                "expression": "round(({view.custom.LoLim}-{view.custom.EUMin})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "position.y": {
+            "binding": {
+              "config": {
+                "expression": "203-round(({view.custom.LoLim}-{view.custom.EUMin})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.InLo}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.FillLo}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "AnimatedBar_LoLo"
+        },
+        "position": {
+          "x": 22,
+          "y": 193,
+          "width": 30,
+          "height": 10
+        },
+        "props": {
+          "text": "",
+          "style": {}
+        },
+        "propConfig": {
+          "position.height": {
+            "binding": {
+              "config": {
+                "expression": "round(({view.custom.LoLoLim}-{view.custom.EUMin})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "position.y": {
+            "binding": {
+              "config": {
+                "expression": "203-round(({view.custom.LoLoLim}-{view.custom.EUMin})/max(0.000001,{view.custom.EUMax}-{view.custom.EUMin})*174)"
+              },
+              "type": "expr"
+            }
+          },
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.InLoLo}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.FillLoLo}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "PVIndicator"
+        },
+        "position": {
+          "x": 4,
+          "y": 28,
+          "width": 16,
+          "height": 14
+        },
+        "props": {
+          "text": "\u25b6",
+          "style": {
+            "fontSize": "13px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "position.y": {
+            "binding": {
+              "config": {
+                "expression": "29+round((1-{view.custom.Frac})*174)-7"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.SrcQ}>=32,\"#E040E0\",\"#000000\")"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "godsData_Value"
+        },
+        "position": {
+          "x": 4,
+          "y": 208,
+          "width": 66,
+          "height": 22
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "16px",
+            "color": "#0033CC",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.SrcQ}>=32,\"?????\",numberFormat({view.custom.PV},substring(\"0.0000000\",0,if({view.custom.Dec}=0,1,2+{view.custom.Dec}))))"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "godsData_EU"
+        },
+        "position": {
+          "x": 4,
+          "y": 230,
+          "width": 66,
+          "height": 16
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "fontSize": "12px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap"
+          },
+          "textStyle": {
+            "textAlign": "center"
+          }
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "{view.custom.EU}"
+              },
+              "type": "expr"
+            }
+          }
+        }
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\ttp = self.view.params.tagPath\n\tsystem.perspective.openPopup('AIn_' + tp, 'PlantPAX/Faceplates/P_AIn_Faceplate', params={'tagPath': tp},\n\t    title='P_AIn  ' + tp.split('/')[-1], position={'width': 660, 'height': 520}, showCloseIcon=True, draggable=True, resizable=False, modal=False, viewPortBound=True)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    }
+  }
+}

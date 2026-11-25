@@ -1,0 +1,228 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {},
+  "props": {
+    "defaultSize": {
+      "width": 800,
+      "height": 470
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "version": 0,
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "#C8C8C8",
+        "overflow": "hidden"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "version": 0,
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "x": 20,
+          "y": 10,
+          "width": 700,
+          "height": 34
+        },
+        "props": {
+          "text": "Analog Input Overview - PlantPAX P_AIn",
+          "style": {
+            "fontSize": "22px",
+            "color": "#000000",
+            "overflow": "hidden",
+            "whiteSpace": "nowrap",
+            "fontWeight": "bold"
+          },
+          "textStyle": {
+            "textAlign": "left"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Val_LIT_101"
+        },
+        "position": {
+          "x": 30,
+          "y": 70,
+          "width": 150,
+          "height": 72
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Value",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/LIT_101"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Val_FIT_102"
+        },
+        "position": {
+          "x": 220,
+          "y": 70,
+          "width": 150,
+          "height": 72
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Value",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/FIT_102"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Val_PIT_103"
+        },
+        "position": {
+          "x": 410,
+          "y": 70,
+          "width": 150,
+          "height": 72
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Value",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/PIT_103"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Val_TIT_104"
+        },
+        "position": {
+          "x": 600,
+          "y": 70,
+          "width": 150,
+          "height": 72
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Value",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/TIT_104"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Bar_LIT_101"
+        },
+        "position": {
+          "x": 30,
+          "y": 180,
+          "width": 110,
+          "height": 262
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Bar",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/LIT_101"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Bar_FIT_102"
+        },
+        "position": {
+          "x": 170,
+          "y": 180,
+          "width": 110,
+          "height": 262
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Bar",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/FIT_102"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Bar_PIT_103"
+        },
+        "position": {
+          "x": 310,
+          "y": 180,
+          "width": 110,
+          "height": 262
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Bar",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/PIT_103"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "version": 0,
+        "meta": {
+          "name": "Bar_TIT_104"
+        },
+        "position": {
+          "x": 450,
+          "y": 180,
+          "width": 110,
+          "height": 262
+        },
+        "props": {
+          "path": "PlantPAX/Symbols/P_AIn_Bar",
+          "params": {
+            "tagPath": "[default]PlantPAX_Demo/TIT_104"
+          },
+          "style": {
+            "overflow": "hidden"
+          }
+        }
+      }
+    ]
+  }
+}

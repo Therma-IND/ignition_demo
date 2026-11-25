@@ -1,0 +1,1670 @@
+[
+  {
+    "documentation": "PlantPAX-style Analog Input (P_AIn) for the PlantPAX Perspective faceplates. Simulated 4-20 mA input; replace Val/Inp_PV with an OPC tag (or point instances at the PLC AOI) for real I/O.",
+    "name": "P_AIn",
+    "parameters": {
+      "Desc": {
+        "dataType": "String",
+        "value": ""
+      },
+      "EU": {
+        "dataType": "String",
+        "value": "%"
+      },
+      "Label": {
+        "dataType": "String",
+        "value": ""
+      },
+      "SimAmp": {
+        "dataType": "String",
+        "value": "0.45"
+      },
+      "SimPeriodSec": {
+        "dataType": "String",
+        "value": "120"
+      },
+      "SimPhase": {
+        "dataType": "String",
+        "value": "0"
+      }
+    },
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "name": "Alm",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Fail/Alm}",
+            "name": "Alm_Fail",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Hi/Alm}",
+            "name": "Alm_Hi",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../HiHi/Alm}",
+            "name": "Alm_HiHi",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Lo/Alm}",
+            "name": "Alm_Lo",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../LoLo/Alm}",
+            "name": "Alm_LoLo",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "Cfg",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "String",
+            "name": "Cfg_Desc",
+            "tagType": "AtomicTag",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{Desc}"
+            },
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_EU",
+            "tagType": "AtomicTag",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{EU}"
+            },
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailDB",
+            "tagType": "AtomicTag",
+            "value": 1.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_FailGateDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailHiLim",
+            "tagType": "AtomicTag",
+            "value": 102.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailLoLim",
+            "tagType": "AtomicTag",
+            "value": -2.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_FailOffDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_FailOnDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_FailSeverity",
+            "tagType": "AtomicTag",
+            "value": 1000,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FiltTC",
+            "tagType": "AtomicTag",
+            "value": 0.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Cfg_HasChanObj",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Cfg_HasHiAlm",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Cfg_HasHiHiAlm",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Cfg_HasLoAlm",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Cfg_HasLoLoAlm",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiDB",
+            "tagType": "AtomicTag",
+            "value": 1.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiGateDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiDB",
+            "tagType": "AtomicTag",
+            "value": 1.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiHiGateDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiLim",
+            "tagType": "AtomicTag",
+            "value": 90.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiHiOffDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiHiOnDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiHiSeverity",
+            "tagType": "AtomicTag",
+            "value": 1000,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiLim",
+            "tagType": "AtomicTag",
+            "value": 80.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiOffDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiOnDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_HiSeverity",
+            "tagType": "AtomicTag",
+            "value": 750,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_InpRawMax",
+            "tagType": "AtomicTag",
+            "value": 20.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_InpRawMin",
+            "tagType": "AtomicTag",
+            "value": 4.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Label",
+            "tagType": "AtomicTag",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{Label}"
+            },
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoDB",
+            "tagType": "AtomicTag",
+            "value": 1.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoGateDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLim",
+            "tagType": "AtomicTag",
+            "value": 20.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoDB",
+            "tagType": "AtomicTag",
+            "value": 1.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoLoGateDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoLim",
+            "tagType": "AtomicTag",
+            "value": 10.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoLoOffDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoLoOnDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoLoSeverity",
+            "tagType": "AtomicTag",
+            "value": 1000,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoOffDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoOnDly",
+            "tagType": "AtomicTag",
+            "value": 0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_LoSeverity",
+            "tagType": "AtomicTag",
+            "value": 750,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_PVDecPlcs",
+            "tagType": "AtomicTag",
+            "value": 1,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMax",
+            "tagType": "AtomicTag",
+            "value": 100.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMin",
+            "tagType": "AtomicTag",
+            "value": 0.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Tag",
+            "tagType": "AtomicTag",
+            "value": {
+              "bindType": "parameter",
+              "binding": "{InstanceName}"
+            },
+            "valueSource": "memory"
+          }
+        ]
+      },
+      {
+        "name": "Cmd",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 2)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Sts/Sts_SubstPV\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_InpPV",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 2)[0]\n\tv \u003d system.tag.readBlocking([base + \u0027/Val/Val\u0027])[0].value\n\tsystem.tag.writeBlocking([base + \u0027/Cmd/MSet_SubstPV\u0027, base + \u0027/Sts/Sts_SubstPV\u0027], [v, True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_SubstPV",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Sts/Sts_SubstPV}",
+            "name": "MRdy_InpPV",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]../Sts/Sts_SubstPV}",
+            "name": "MRdy_SubstPV",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "name": "MSet_SubstPV",
+            "tagType": "AtomicTag",
+            "value": 0.0,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 2)[0]\n\tv \u003d system.tag.readBlocking([base + \u0027/Val/Val\u0027])[0].value\n\tsystem.tag.writeBlocking([base + \u0027/Val/Val_PVMaxCapt\u0027, base + \u0027/Val/Val_PVMinCapt\u0027], [v, v])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_ClearCapt",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 2)[0]\n\tnames \u003d [\u0027HiHi\u0027, \u0027Hi\u0027, \u0027Lo\u0027, \u0027LoLo\u0027, \u0027Fail\u0027]\n\tsystem.tag.writeBlocking([base + \u0027/\u0027 + n + \u0027/Ack\u0027 for n in names], [True] * len(names))\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_ResetAckAll",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../HiHi/ORdy_Ack} || {[.]../Hi/ORdy_Ack} || {[.]../Lo/ORdy_Ack} || {[.]../LoLo/ORdy_Ack} || {[.]../Fail/ORdy_Ack}",
+            "name": "ORdy_ResetAckAll",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Set_SimPV",
+            "tagType": "AtomicTag",
+            "value": 0.0,
+            "valueSource": "memory"
+          }
+        ]
+      },
+      {
+        "name": "Fail",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "name": "Ack",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange:\n\t\treturn\n\tprev \u003d previousValue.value if previousValue is not None else False\n\tif currentValue.value and not prev:\n\t\tsystem.tag.writeBlocking([str(tagPath).rsplit(\u0027/\u0027, 1)[0] + \u0027/Ack\u0027], [False])"
+              }
+            ],
+            "expression": "{[.]../Val/Val_InpPV} \u003e {[.]../Cfg/Cfg_FailHiLim} || {[.]../Val/Val_InpPV} \u003c {[.]../Cfg/Cfg_FailLoLim}",
+            "name": "Alm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Cond",
+            "tagType": "AtomicTag",
+            "value": "",
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "true",
+            "name": "Cfg_Exists",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Disabled",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Disable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Enable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Disabled} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "MRdy_Disable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Disabled}",
+            "name": "MRdy_Enable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "MRdy_Test",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Ack\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Ack",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Shelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Unshelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Ack}",
+            "name": "ORdy_Ack",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "ORdy_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Shelved} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "ORdy_Shelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Shelved}",
+            "name": "ORdy_Unshelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Shelved",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Suppressed",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]Disabled} || {[.]Shelved} || {[.]Suppressed} || !{[.]Cfg_Exists}, 0, if({[.]Alm} || !{[.]Ack}, toInt(max(1, min(4, ceil({[.]../Cfg/Cfg_FailSeverity} / 250.0)))) * 2 + if({[.]Ack}, 0, 1), 0))",
+            "name": "Val_Notify",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "Hi",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "name": "Ack",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange:\n\t\treturn\n\tprev \u003d previousValue.value if previousValue is not None else False\n\tif currentValue.value and not prev:\n\t\tsystem.tag.writeBlocking([str(tagPath).rsplit(\u0027/\u0027, 1)[0] + \u0027/Ack\u0027], [False])"
+              }
+            ],
+            "expression": "{[.]../Sts/Sts_Hi}",
+            "name": "Alm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Cond",
+            "tagType": "AtomicTag",
+            "value": "",
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasHiAlm}",
+            "name": "Cfg_Exists",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Disabled",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Disable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Enable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Disabled} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "MRdy_Disable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Disabled}",
+            "name": "MRdy_Enable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "MRdy_Test",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Ack\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Ack",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Shelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Unshelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Ack}",
+            "name": "ORdy_Ack",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "ORdy_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Shelved} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "ORdy_Shelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Shelved}",
+            "name": "ORdy_Unshelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Shelved",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Suppressed",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]Disabled} || {[.]Shelved} || {[.]Suppressed} || !{[.]Cfg_Exists}, 0, if({[.]Alm} || !{[.]Ack}, toInt(max(1, min(4, ceil({[.]../Cfg/Cfg_HiSeverity} / 250.0)))) * 2 + if({[.]Ack}, 0, 1), 0))",
+            "name": "Val_Notify",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "HiHi",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "name": "Ack",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange:\n\t\treturn\n\tprev \u003d previousValue.value if previousValue is not None else False\n\tif currentValue.value and not prev:\n\t\tsystem.tag.writeBlocking([str(tagPath).rsplit(\u0027/\u0027, 1)[0] + \u0027/Ack\u0027], [False])"
+              }
+            ],
+            "expression": "{[.]../Sts/Sts_HiHi}",
+            "name": "Alm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Cond",
+            "tagType": "AtomicTag",
+            "value": "",
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasHiHiAlm}",
+            "name": "Cfg_Exists",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Disabled",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Disable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Enable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Disabled} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "MRdy_Disable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Disabled}",
+            "name": "MRdy_Enable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "MRdy_Test",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Ack\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Ack",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Shelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Unshelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Ack}",
+            "name": "ORdy_Ack",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "ORdy_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Shelved} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "ORdy_Shelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Shelved}",
+            "name": "ORdy_Unshelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Shelved",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Suppressed",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]Disabled} || {[.]Shelved} || {[.]Suppressed} || !{[.]Cfg_Exists}, 0, if({[.]Alm} || !{[.]Ack}, toInt(max(1, min(4, ceil({[.]../Cfg/Cfg_HiHiSeverity} / 250.0)))) * 2 + if({[.]Ack}, 0, 1), 0))",
+            "name": "Val_Notify",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "Lo",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "name": "Ack",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange:\n\t\treturn\n\tprev \u003d previousValue.value if previousValue is not None else False\n\tif currentValue.value and not prev:\n\t\tsystem.tag.writeBlocking([str(tagPath).rsplit(\u0027/\u0027, 1)[0] + \u0027/Ack\u0027], [False])"
+              }
+            ],
+            "expression": "{[.]../Sts/Sts_Lo}",
+            "name": "Alm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Cond",
+            "tagType": "AtomicTag",
+            "value": "",
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasLoAlm}",
+            "name": "Cfg_Exists",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Disabled",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Disable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Enable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Disabled} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "MRdy_Disable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Disabled}",
+            "name": "MRdy_Enable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "MRdy_Test",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Ack\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Ack",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Shelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Unshelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Ack}",
+            "name": "ORdy_Ack",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "ORdy_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Shelved} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "ORdy_Shelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Shelved}",
+            "name": "ORdy_Unshelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Shelved",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Suppressed",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]Disabled} || {[.]Shelved} || {[.]Suppressed} || !{[.]Cfg_Exists}, 0, if({[.]Alm} || !{[.]Ack}, toInt(max(1, min(4, ceil({[.]../Cfg/Cfg_LoSeverity} / 250.0)))) * 2 + if({[.]Ack}, 0, 1), 0))",
+            "name": "Val_Notify",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "LoLo",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "name": "Ack",
+            "tagType": "AtomicTag",
+            "value": true,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange:\n\t\treturn\n\tprev \u003d previousValue.value if previousValue is not None else False\n\tif currentValue.value and not prev:\n\t\tsystem.tag.writeBlocking([str(tagPath).rsplit(\u0027/\u0027, 1)[0] + \u0027/Ack\u0027], [False])"
+              }
+            ],
+            "expression": "{[.]../Sts/Sts_LoLo}",
+            "name": "Alm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "String",
+            "name": "Cfg_Cond",
+            "tagType": "AtomicTag",
+            "value": "",
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasLoLoAlm}",
+            "name": "Cfg_Exists",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Disabled",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Disable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Disabled\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "MCmd_Enable",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Disabled} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "MRdy_Disable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Disabled}",
+            "name": "MRdy_Enable",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "MRdy_Test",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Ack\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Ack",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [True])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Shelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tif initialChange or not currentValue.value:\n\t\treturn\n\ttp \u003d str(tagPath)\n\tbase \u003d tp.rsplit(\u0027/\u0027, 1)[0]\n\tsystem.tag.writeBlocking([base + \u0027/Shelved\u0027], [False])\n\tsystem.tag.writeBlocking([tp], [False])"
+              }
+            ],
+            "name": "OCmd_Unshelve",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Ack}",
+            "name": "ORdy_Ack",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "ORdy_Reset",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "!{[.]Shelved} \u0026\u0026 {[.]Cfg_Exists}",
+            "name": "ORdy_Shelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Shelved}",
+            "name": "ORdy_Unshelve",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Shelved",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Suppressed",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]Disabled} || {[.]Shelved} || {[.]Suppressed} || !{[.]Cfg_Exists}, 0, if({[.]Alm} || !{[.]Ack}, toInt(max(1, min(4, ceil({[.]../Cfg/Cfg_LoLoSeverity} / 250.0)))) * 2 + if({[.]Ack}, 0, 1), 0))",
+            "name": "Val_Notify",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          }
+        ]
+      },
+      {
+        "name": "Sts",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HiHiLim} \u003c {[.]../Cfg/Cfg_HiLim} || {[.]../Cfg/Cfg_LoLim} \u003c {[.]../Cfg/Cfg_LoLoLim} || {[.]../Cfg/Cfg_HiLim} \u003c\u003d {[.]../Cfg/Cfg_LoLim}",
+            "name": "Err_Alarm",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_PVEUMax} \u003c\u003d {[.]../Cfg/Cfg_PVEUMin}",
+            "name": "Err_EU",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_FiltTC} \u003c 0",
+            "name": "Err_Filt",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_InpRawMax} \u003c\u003d {[.]../Cfg/Cfg_InpRawMin}",
+            "name": "Err_Raw",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Err_Timer",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../HiHi/Shelved} || {[.]../Hi/Shelved} || {[.]../Lo/Shelved} || {[.]../LoLo/Shelved} || {[.]../Fail/Shelved} || {[.]../HiHi/Disabled} || {[.]../Hi/Disabled} || {[.]../Lo/Disabled} || {[.]../LoLo/Disabled} || {[.]../Fail/Disabled} || {[.]../HiHi/Suppressed} || {[.]../Hi/Suppressed} || {[.]../Lo/Suppressed} || {[.]../LoLo/Suppressed} || {[.]../Fail/Suppressed}",
+            "name": "Sts_AlmInh",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Err_EU} || {[.]Err_Raw} || {[.]Err_Filt} || {[.]Err_Timer} || {[.]Err_Alarm}",
+            "name": "Sts_Err",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasHiAlm} \u0026\u0026 {[.]../Val/Val} \u003e\u003d {[.]../Cfg/Cfg_HiLim}",
+            "name": "Sts_Hi",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasHiHiAlm} \u0026\u0026 {[.]../Val/Val} \u003e\u003d {[.]../Cfg/Cfg_HiHiLim}",
+            "name": "Sts_HiHi",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasLoAlm} \u0026\u0026 {[.]../Val/Val} \u003c\u003d {[.]../Cfg/Cfg_LoLim}",
+            "name": "Sts_Lo",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]../Cfg/Cfg_HasLoLoAlm} \u0026\u0026 {[.]../Val/Val} \u003c\u003d {[.]../Cfg/Cfg_LoLoLim}",
+            "name": "Sts_LoLo",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "expression": "{[.]Sts_SubstPV} || {[.]../HiHi/Disabled} || {[.]../Hi/Disabled} || {[.]../Lo/Disabled} || {[.]../LoLo/Disabled} || {[.]../Fail/Disabled}",
+            "name": "Sts_MaintByp",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Sts_SubstPV",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          }
+        ]
+      },
+      {
+        "name": "Val",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Float4",
+            "expression": "{[.]../Cfg/Cfg_InpRawMin} + ({[.]../Cfg/Cfg_InpRawMax} - {[.]../Cfg/Cfg_InpRawMin}) * (0.5 + {SimAmp} * sin(6.283185 * toMillis(now(1000)) / ({SimPeriodSec} * 1000.0) + {SimPhase}))",
+            "name": "Inp_PV",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Boolean",
+            "name": "Inp_Sim",
+            "tagType": "AtomicTag",
+            "value": false,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]../Sts/Sts_SubstPV}, 18, if({[.]Inp_Sim}, 10, if({[.]../Fail/Alm}, 32, if({[.]../Sts/Sts_Err}, 35, 1))))",
+            "name": "SrcQ",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "eventScripts": [
+              {
+                "eventid": "valueChanged",
+                "script": "\tv \u003d currentValue.value\n\tif v is None or not currentValue.quality.isGood():\n\t\treturn\n\tbase \u003d str(tagPath).rsplit(\u0027/\u0027, 2)[0]\n\tp \u003d [base + \u0027/Val/Val_PVMaxCapt\u0027, base + \u0027/Val/Val_PVMinCapt\u0027]\n\tmx, mn \u003d [q.value for q in system.tag.readBlocking(p)]\n\tw, x \u003d [], []\n\tif mx is None or v \u003e mx:\n\t\tw.append(p[0]); x.append(v)\n\tif mn is None or v \u003c mn:\n\t\tw.append(p[1]); x.append(v)\n\tif w:\n\t\tsystem.tag.writeBlocking(w, x)"
+              }
+            ],
+            "expression": "if({[.]../Sts/Sts_SubstPV}, {[.]../Cmd/MSet_SubstPV}, if({[.]Inp_Sim}, {[.]../Cmd/Set_SimPV}, {[.]Val_InpPV}))",
+            "name": "Val",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "if({[.]../Fail/Alm}, 32, if({[.]../Sts/Sts_Err}, 35, 0))",
+            "name": "Val_Fault",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "expression": "{[.]../Cfg/Cfg_PVEUMin} + ({[.]Inp_PV} - {[.]../Cfg/Cfg_InpRawMin}) / ({[.]../Cfg/Cfg_InpRawMax} - {[.]../Cfg/Cfg_InpRawMin}) * ({[.]../Cfg/Cfg_PVEUMax} - {[.]../Cfg/Cfg_PVEUMin})",
+            "name": "Val_InpPV",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Int4",
+            "expression": "max(max(max(max({[.]../HiHi/Val_Notify}, {[.]../Hi/Val_Notify}), {[.]../Lo/Val_Notify}), {[.]../LoLo/Val_Notify}), {[.]../Fail/Val_Notify})",
+            "name": "Val_NotifyAll",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "expression": "{[.]../Cfg/Cfg_PVEUMax}",
+            "name": "Val_PVEUMax",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "expression": "{[.]../Cfg/Cfg_PVEUMin}",
+            "name": "Val_PVEUMin",
+            "tagType": "AtomicTag",
+            "valueSource": "expr"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Val_PVMaxCapt",
+            "tagType": "AtomicTag",
+            "value": null,
+            "valueSource": "memory"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Val_PVMinCapt",
+            "tagType": "AtomicTag",
+            "value": null,
+            "valueSource": "memory"
+          }
+        ]
+      }
+    ]
+  }
+]

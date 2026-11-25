@@ -1,0 +1,438 @@
+[
+  {
+    "name": "FIT_102",
+    "parameters": {
+      "Desc": {
+        "dataType": "String",
+        "value": "Feed Pump P-102 Discharge Flow"
+      },
+      "EU": {
+        "dataType": "String",
+        "value": "GPM"
+      },
+      "Label": {
+        "dataType": "String",
+        "value": "Feed Flow"
+      },
+      "SimAmp": {
+        "dataType": "String",
+        "value": "0.36"
+      },
+      "SimPeriodSec": {
+        "dataType": "String",
+        "value": "90"
+      },
+      "SimPhase": {
+        "dataType": "String",
+        "value": "1.5"
+      }
+    },
+    "tagType": "UdtInstance",
+    "typeId": "PlantPAX/P_AIn",
+    "tags": [
+      {
+        "name": "Cfg",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_PVDecPlcs",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMax",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMin",
+            "tagType": "AtomicTag"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LIT_101",
+    "parameters": {
+      "Desc": {
+        "dataType": "String",
+        "value": "Tank T-101 Level"
+      },
+      "EU": {
+        "dataType": "String",
+        "value": "%"
+      },
+      "Label": {
+        "dataType": "String",
+        "value": "T-101 Level"
+      },
+      "SimAmp": {
+        "dataType": "String",
+        "value": "0.48"
+      },
+      "SimPeriodSec": {
+        "dataType": "String",
+        "value": "120"
+      },
+      "SimPhase": {
+        "dataType": "String",
+        "value": "0"
+      }
+    },
+    "tagType": "UdtInstance",
+    "typeId": "PlantPAX/P_AIn",
+    "tags": [
+      {
+        "name": "Cfg",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_PVDecPlcs",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMax",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMin",
+            "tagType": "AtomicTag"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "PIT_103",
+    "parameters": {
+      "Desc": {
+        "dataType": "String",
+        "value": "Header Discharge Pressure"
+      },
+      "EU": {
+        "dataType": "String",
+        "value": "PSI"
+      },
+      "Label": {
+        "dataType": "String",
+        "value": "Disch Press"
+      },
+      "SimAmp": {
+        "dataType": "String",
+        "value": "0.2"
+      },
+      "SimPeriodSec": {
+        "dataType": "String",
+        "value": "60"
+      },
+      "SimPhase": {
+        "dataType": "String",
+        "value": "3.0"
+      }
+    },
+    "tagType": "UdtInstance",
+    "typeId": "PlantPAX/P_AIn",
+    "tags": [
+      {
+        "name": "Cfg",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_PVDecPlcs",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMax",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMin",
+            "tagType": "AtomicTag"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "TIT_104",
+    "parameters": {
+      "Desc": {
+        "dataType": "String",
+        "value": "HW Supply Temperature"
+      },
+      "EU": {
+        "dataType": "String",
+        "value": "degF"
+      },
+      "Label": {
+        "dataType": "String",
+        "value": "Supply Temp"
+      },
+      "SimAmp": {
+        "dataType": "String",
+        "value": "0.47"
+      },
+      "SimPeriodSec": {
+        "dataType": "String",
+        "value": "150"
+      },
+      "SimPhase": {
+        "dataType": "String",
+        "value": "4.5"
+      }
+    },
+    "tagType": "UdtInstance",
+    "typeId": "PlantPAX/P_AIn",
+    "tags": [
+      {
+        "name": "Cfg",
+        "tagType": "Folder",
+        "tags": [
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_FailLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiHiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_HiLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoDB",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_LoLoLim",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Int4",
+            "name": "Cfg_PVDecPlcs",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMax",
+            "tagType": "AtomicTag"
+          },
+          {
+            "dataType": "Float4",
+            "name": "Cfg_PVEUMin",
+            "tagType": "AtomicTag"
+          }
+        ]
+      }
+    ]
+  }
+]
